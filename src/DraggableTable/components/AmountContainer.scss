@@ -1,0 +1,38 @@
+@import "../constants";
+
+.draggable-table {
+  .-amount-container {
+    display: inline-flex;
+    border-top: $border;
+    border-bottom: $border;
+    border-left: $border;
+    border-right: $border;
+    font-size: 14px;
+    //font-weight: 700;
+    margin-top: -1px;
+    z-index: 13;
+
+    .--amount-text {
+      //border-right: $border;
+      //box-sizing: border-box;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .--amount-item {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      transition: left ease-in-out 300ms;
+    }
+  }
+  &.--na {
+    .-amount-container {
+      .--amount-item {
+        transition: unset !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import "../constants";
+
+.draggable-table {
+  .--column-move {
+    position: absolute;
+    background-color: rgba(256, 256, 256, 0.9);
+    opacity: 0.9;
+    height: 100%;
+    box-sizing: border-box;
+    z-index: 15;
+    border-left: $border;
+    border-right: $border;
+
+    .-top-header-container {
+      display: block;
+      width: 100%;
+      border-right: none;
+      .--top-header-item {
+        border-top: $border;
+        border-left: $border;
+        border-left: none;
+        border-right: none;
+        width: 100%;
+        //border-right: $border;
+        background-color: rgba(256, 256, 256, 0.9);
+        //border-top: none;
+        //box-sizing: border-box;
+      }
+    }
+
+    .-data-container {
+      border-left: none;
+      border-right: none;
+      .--row-container {
+        //border-right: $border;
+
+        .--item {
+          position: relative;
+          border-top: none;
+          //box-sizing: border-box;
+          border-left: none;
+          border-right: none;
+          height: 80px;
+          //background-color: rgba(256, 256, 256, 0.9);
+        }
+      }
+    }
+
+    .-amount-container {
+      //box-sizing: border-box;
+      border-left: none;
+      border-right: none;
+      width: 100%;
+
+      .--amount-item {
+        box-sizing: border-box;
+        border-left: none;
+        border-right: none;
+        width: 100%;
+      }
+    }
+  }
+}

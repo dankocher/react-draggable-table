@@ -1,0 +1,43 @@
+
+.--handle {
+  &-30 {
+    $size: 3px;
+    $circleSize: 6px;
+    $m_circleSize: -6px;
+    $color: gray;
+    width: 20px;
+    height: 30px;
+    //background-color: white;
+    &.-none{
+      &:before{
+        height: 0;
+      }
+      &:after{
+        height: 0;
+      }
+    }
+    &:before {
+      position: absolute;
+      background-color: gray;
+      margin-left: -6px;
+      margin-top: 13px;
+      content: '';
+      width: $size;
+      height: $size;
+      border-radius: 50%;
+      box-shadow: 0 $circleSize 0 0 $color, 0 $m_circleSize 0 0 $color;
+    }
+
+    &:after {
+      position: absolute;
+      background-color: gray;
+      margin-left: 1px;
+      margin-top: 13px;
+      content: '';
+      width: $size;
+      height: $size;
+      border-radius: 50%;
+      box-shadow: 0 $circleSize 0 0 $color, 0 $m_circleSize 0 0 $color;
+    }
+  }
+}

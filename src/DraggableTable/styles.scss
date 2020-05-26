@@ -1,0 +1,65 @@
+@import "constants";
+.r-draggable-table {
+  position: relative;
+  .draggable-table-c {
+    position: relative;
+    display: flex;
+    .draggable-table {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      .table-container {
+        position: relative;
+        background-color: $emptyColor;
+        display: flex;
+        flex-direction: column;
+        //display: none;
+
+      }
+    }
+    .-v-arrow {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      .v-arr {
+        position: absolute;
+        //height: 100%;
+        //top: 0;
+        left: 5px;
+        //clip-path: polygon(1px 14px, calc(100% - 1px) 14px, 100% 15px, 1px 15px);
+      }
+      .text {
+        transform: rotate(270deg);
+        margin-left: -15px;
+        display: flex;
+        font-size: 14px;
+        text-align: center;
+        min-width: max-content;
+      }
+    }
+  }
+  .-h-arrow {
+    height: 36px;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    .h-arr {
+      margin-top: 5px;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      right: 0;
+      //clip-path: polygon(1px 14px, calc(100% - 1px) 14px, 100% 15px, 1px 15px);
+    }
+
+
+  }
+}
+
+
+

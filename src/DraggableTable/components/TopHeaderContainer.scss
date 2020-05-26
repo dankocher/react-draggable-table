@@ -1,0 +1,54 @@
+@import '../constants';
+
+.draggable-table {
+  .-top-header-container {
+    display: inline-flex;
+    border-right: $border;
+    box-sizing: border-box;
+    .border-top-line {
+      position: absolute;
+      height: 1px;
+      border-top: $border;
+    }
+    .empty-item {
+      border-right: $border;
+      border-bottom: $border;
+      background-color: $backgroundColor;
+
+    }
+    .--top-header-item {
+      position: absolute;
+      border-left: $border;
+      border-top: $border;
+      border-right: $border;
+      border-bottom: $border;
+      background-color: $backgroundColor;
+      //box-sizing: border-box;
+      transition: left ease-in-out 300ms;
+      .---handle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &.--empty {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border-bottom: $empty;
+        border-left: $transparent;
+        border-right: $transparent;
+
+      }
+      &:last-child {
+        //border-right: none;
+      }
+    }
+  }
+  &.--na {
+    .-top-header-container {
+      .--top-header-item {
+        transition: unset !important;
+      }
+    }
+  }
+}

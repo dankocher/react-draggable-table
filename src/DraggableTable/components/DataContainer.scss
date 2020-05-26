@@ -1,0 +1,82 @@
+@import '../constants';
+
+.draggable-table {
+  .-data-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-left: $border;
+    border-right: $border;
+    //box-sizing: border-box;
+    .--row-container {
+      display: inline-flex;
+      z-index: 10;
+      //box-sizing: border-box;
+      .--left-header {
+        border-left: none;
+        border-top: $border;
+        border-right: $border;
+        border-bottom: $border;
+        display: inline-flex;
+        align-items: center;
+        background-color: $backgroundColor;
+        //box-sizing: border-box;
+      }
+      .--item {
+        position: absolute;
+        border-top: $border;
+        border-right: $border;
+        border-left: $border;
+        border-bottom: $border;
+        background-color: $backgroundColor;
+        transition: left ease-in-out 300ms;
+        //box-sizing: border-box;
+        &:last-child {
+          //border-right: none;
+        }
+        &.--empty {
+          border-bottom: $transparent;
+          border-right: $transparent;
+          border-left: $transparent;
+          background-color: transparent;
+          border-top: $transparent;
+        }
+      }
+      &:last-child {
+        .--item.--empty {
+          border-top: none;
+          border-bottom: none;
+        }
+      }
+      &:not(.-move) {
+        transition: transform ease-in-out 300ms;
+      }
+      &.-moving-hidden {
+        background-color: transparent !important;
+        border-top: $transparent !important;
+        border-bottom: $transparent !important;
+        box-sizing: border-box;
+      }
+      &.-move {
+        position: absolute;
+        opacity: 0.9;
+        border: none;
+        background-color: rgba(256, 256, 256, 0.9);
+        z-index: 11;
+        //box-sizing: border-box;
+        .--left-header {
+          //box-sizing: border-box;
+          //border-right: none;
+        }
+      }
+    }
+  }
+  &.--na {
+    .--row-container {
+      transition: unset !important;
+      .--item {
+        transition: unset !important;
+      }
+    }
+  }
+}
